@@ -75,7 +75,7 @@ const FAQs: React.FC = () => {
                 </Paragraph>
                 <ul style={{ color: '#62748e' }}>
                     <li>Email: support@ubuntufx.com</li>
-                    <li>Phone: +1 (555) 123-4567</li>
+                    <li>Phone: +27 812 767 830</li>
                     <li>Live Chat: Available 24/7</li>
                 </ul>
             </Card>
