@@ -8,27 +8,36 @@ import {
 } from '@ant-design/icons';
 
 const { Title, Paragraph } = Typography;
-const { Panel } = Collapse;
 
 const HelpSupport: React.FC = () => {
     const faqs = [
         {
-            question: "How do I add a new trade to my journal?",
-            answer: "Navigate to the 'Trading Form' section and fill in all the trade details. Click 'Save Trade' to record it in your journal."
+            key: '1',
+            label: "How do I add a new trade to my journal?",
+            children: <p>Navigate to the 'Trading Form' section and fill in all the trade details. Click 'Save Trade' to record it in your journal.</p>
         },
         {
-            question: "Can I export my trade data?",
-            answer: "Yes, you can export your trade history in CSV format from the 'Trade List' page by clicking the 'Export' button."
+            key: '2',
+            label: "Can I export my trade data?",
+            children: <p>Yes, you can export your trade history in CSV format from the 'Trade List' page by clicking the 'Export' button.</p>
         },
         {
-            question: "How is the Smart Analyzer calculated?",
-            answer: "The Smart Analyzer evaluates multiple factors including technical setup, market conditions, historical performance, and risk management to provide a trade recommendation."
+            key: '3',
+            label: "How is the Smart Analyzer calculated?",
+            children: <p>The Smart Analyzer evaluates multiple factors including technical setup, market conditions, historical performance, and risk management to provide a trade recommendation.</p>
         },
         {
-            question: "Is my data secure?",
-            answer: "Yes, all your trading data is encrypted and securely stored. We never share your information with third parties."
+            key: '4',
+            label: "Is my data secure?",
+            children: <p>Yes, all your trading data is encrypted and securely stored. We never share your information with third parties.</p>
         }
     ];
+
+    const collapseItems = faqs.map(faq => ({
+        key: faq.key,
+        label: <span style={{ color: '#314158' }}>{faq.label}</span>,
+        children: <p style={{ color: '#62748e' }}>{faq.children}</p>
+    }));
 
     return (
         <div>
@@ -52,13 +61,7 @@ const HelpSupport: React.FC = () => {
                 boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
             }}>
                 <Title level={3} style={{ color: '#314158' }}>Frequently Asked Questions</Title>
-                <Collapse accordion>
-                    {faqs.map((faq, index) => (
-                        <Panel header={<span style={{ color: '#314158' }}>{faq.question}</span>} key={index}>
-                            <p style={{ color: '#62748e' }}>{faq.answer}</p>
-                        </Panel>
-                    ))}
-                </Collapse>
+                <Collapse accordion items={collapseItems} />
             </Card>
 
             <Card style={{
