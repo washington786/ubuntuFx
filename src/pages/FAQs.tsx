@@ -3,31 +3,41 @@ import { Card, Typography, Collapse } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 
 const { Title, Paragraph } = Typography;
-const { Panel } = Collapse;
 
 const FAQs: React.FC = () => {
     const faqs = [
         {
-            question: "How do I reset my password?",
-            answer: "Click on 'Forgot Password' on the login page and follow the instructions sent to your email."
+            key: '1',
+            label: "How do I reset my password?",
+            children: <p>Click on 'Forgot Password' on the login page and follow the instructions sent to your email.</p>
         },
         {
-            question: "What devices can I use Ubuntu FX on?",
-            answer: "Ubuntu FX works on all modern browsers and is optimized for desktop and tablet devices."
+            key: '2',
+            label: "What devices can I use Ubuntu FX on?",
+            children: <p>Ubuntu FX works on all modern browsers and is optimized for desktop and tablet devices.</p>
         },
         {
-            question: "How often is my data backed up?",
-            answer: "All data is automatically backed up daily to secure cloud storage."
+            key: '3',
+            label: "How often is my data backed up?",
+            children: <p>All data is automatically backed up daily to secure cloud storage.</p>
         },
         {
-            question: "Can I use Ubuntu FX offline?",
-            answer: "While the app requires an internet connection, we're working on an offline mode for future releases."
+            key: '4',
+            label: "Can I use Ubuntu FX offline?",
+            children: <p>While the app requires an internet connection, we're working on an offline mode for future releases.</p>
         },
         {
-            question: "How do I delete my account?",
-            answer: "Contact our support team through the Help & Support page to request account deletion."
+            key: '5',
+            label: "How do I delete my account?",
+            children: <p>Contact our support team through the Help & Support page to request account deletion.</p>
         }
     ];
+
+    const collapseItems = faqs.map(faq => ({
+        key: faq.key,
+        label: <span style={{ color: '#314158' }}>{faq.label}</span>,
+        children: <p style={{ color: '#62748e' }}>{faq.children}</p>
+    }));
 
     return (
         <div>
@@ -50,13 +60,7 @@ const FAQs: React.FC = () => {
                 borderRadius: '8px',
                 boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
             }}>
-                <Collapse accordion>
-                    {faqs.map((faq, index) => (
-                        <Panel header={<span style={{ color: '#314158' }}>{faq.question}</span>} key={index}>
-                            <p style={{ color: '#62748e' }}>{faq.answer}</p>
-                        </Panel>
-                    ))}
-                </Collapse>
+                <Collapse accordion items={collapseItems} />
             </Card>
 
             <Card style={{
