@@ -22,6 +22,7 @@ import type { MenuProps } from 'antd';
 //page components
 import { Login, Register, PasswordRecovery, Dashboard, FAQs, HelpSupport, Materials, SmartAnalyzer, TradeList, TradingForm, TradingInstructions } from './pages';
 import Profile from './pages/Profile';
+import Settings from './pages/Settings';
 
 
 const { Header, Sider, Content } = Layout;
@@ -42,6 +43,9 @@ const App: FC = () => {
   const handleProfile = () => {
     navigate('/profile');
   };
+  const handleSettings = () => {
+    navigate('/settings');
+  };
 
   const userMenu: MenuProps = {
     items: [
@@ -55,6 +59,7 @@ const App: FC = () => {
         key: 'settings',
         icon: <UserOutlined />,
         label: 'Settings',
+        onClick: handleSettings
       },
       {
         type: 'divider',
@@ -240,6 +245,7 @@ const App: FC = () => {
               <Route path="/help" element={<HelpSupport />} />
               <Route path="/faqs" element={<FAQs />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/settings" element={<Settings />} />
               <Route path="*" element={<Navigate to="/dashboard" replace />} />
             </Routes>
           </motion.div>
