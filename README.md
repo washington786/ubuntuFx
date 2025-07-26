@@ -1,267 +1,209 @@
-# Ubuntu FX Trading Dashboard
+# Ubuntu FX Trading Journal Dashboard
 
-## 📊 Professional Trading Performance Dashboard
+A comprehensive Forex trading journal and analytics dashboard built with React, TypeScript, and Ant Design.
 
-A comprehensive trading dashboard designed for serious traders who want to track, analyze, and optimize their trading performance with professional-grade analytics.
+## 📊 Overview
+
+Ubuntu FX is a professional trading journal application designed for Forex traders to track, analyze, and optimize their trading performance. The dashboard provides powerful tools for recording trades, analyzing performance metrics, and improving trading strategies.
 
 ## 🚀 Features
 
-### **🎯 Real-Time Performance Tracking**
+### Core Functionality
 
-- Live win rate monitoring
-- Dynamic profit/loss calculations
-- Risk/reward ratio analysis
-- Consecutive win/loss tracking
+- **Trade Journal**: Record and manage all trading activities
+- **Performance Analytics**: Visualize profit/loss trends and key metrics
+- **Smart Analyzer**: AI-powered trade evaluation system
+- **Trading Instructions**: Guided trading workflow and best practices
+- **Trade History**: Comprehensive trade listing with filtering and search
 
-### **📈 Advanced Analytics Suite**
+### User Management
 
-- Multi-strategy performance comparison
-- Risk-adjusted return metrics
-- Volatility analysis
-- Drawdown visualization
+- **Profile Management**: Personal information and preferences
+- **Settings Configuration**: Application customization
+- **Authentication**: Secure login and registration system
+- **Achievements System**: Track trading milestones
 
-### **📋 Trade Management System**
+### Educational Resources
 
-- Comprehensive trade logging
-- Automated risk calculations
-- Position sizing suggestions
-- Trade setup condition validation
+- **Learning Materials**: Developer resources and trading guides
+- **MQL5 Scripts**: Ready-to-use trading robots and indicators
+- **Video Tutorials**: Step-by-step learning content
 
-### **🛡️ Risk Management Tools**
+### Technical Features
 
-- Portfolio risk exposure tracking
-- Maximum drawdown alerts
-- Position correlation analysis
-- Leverage optimization
+- **Responsive Design**: Works on desktop and tablet devices
+- **Dark Theme**: Custom slate color scheme for reduced eye strain
+- **Data Visualization**: Interactive charts with Recharts
+- **Smooth Animations**: Framer Motion powered transitions
 
-### **📊 Interactive Data Visualization**
+## 🛠️ Tech Stack
 
-- Customizable chart layouts
-- Real-time performance metrics
-- Historical trade analysis
-- Strategy performance heatmaps
+### Frontend
 
-## 🎯 Getting Started
+- **React 18** with TypeScript
+- **Vite** for fast development
+- **Ant Design 5** for UI components
+- **Recharts** for data visualization
+- **Framer Motion** for animations
+- **React Router** for navigation
 
-### **Prerequisites**
+### Development Tools
+
+- **ESLint** for code quality
+- **TypeScript** for type safety
+- **Jest** for testing (planned)
+
+## 📁 Project Structure
+
+```
+ubuntu-fx-dashboard/
+├── public/
+│   ├── favicon.ico
+│   └── index.html
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── charts/
+│   │   ├── forms/
+│   │   ├── layout/
+│   │   └── tables/
+│   ├── pages/
+│   │   ├── auth/
+│   │   │   ├── Login.tsx
+│   │   │   ├── Register.tsx
+│   │   │   └── PasswordRecovery.tsx
+│   │   ├── Dashboard.tsx
+│   │   ├── TradingForm.tsx
+│   │   ├── TradingInstructions.tsx
+│   │   ├── TradeList.tsx
+│   │   ├── SmartAnalyzer.tsx
+│   │   ├── Profile.tsx
+│   │   ├── Settings.tsx
+│   │   ├── Materials.tsx
+│   │   ├── HelpSupport.tsx
+│   │   └── FAQs.tsx
+│   ├── styles/
+│   │   ├── global.css
+│   │   └── variables.css
+│   ├── types/
+│   │   └── index.ts
+│   ├── utils/
+│   │   └── constants.ts
+│   ├── App.tsx
+│   └── main.tsx
+├── .gitignore
+├── index.html
+├── package.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vite.config.ts
+└── README.md
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
 
 - Node.js (v16 or higher)
-- npm or yarn package manager
-- Modern web browser
+- npm or yarn
 
-### **Installation**
+### Installation
+
+1. Clone the repository:
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/ubuntufx.git
-cd ubuntufx
+git clone https://github.com/yourusername/ubuntu-fx-dashboard.git
+cd ubuntu-fx-dashboard
+```
 
-# Install dependencies
+2. Install dependencies:
+
+```bash
 npm install
+```
 
-# Start development server
+3. Start the development server:
+
+```bash
 npm run dev
+```
 
-# Build for production
+4. Build for production:
+
+```bash
 npm run build
 ```
 
-### **Configuration**
+5. Preview production build:
 
-1. Update `src/config/trading-config.ts` with your trading parameters
-2. Configure risk management rules in `src/config/risk-config.ts`
-3. Customize dashboard widgets in `src/config/dashboard-layout.ts`
+```bash
+npm run preview
+```
 
-## 🛠️ Core Components
+## 🎨 Color Theme
 
-### **1. Performance Overview**
+The dashboard uses a custom slate color palette:
 
-- **Total P&L**: Real-time profit and loss tracking
-- **Win Rate**: Percentage of winning trades
-- **Avg Win/Loss**: Average profit/loss per trade
-- **Risk/Reward**: Portfolio-wide R:R ratio
-
-### **2. Strategy Analytics**
-
-- **Strategy Performance**: Individual strategy win rates
-- **Risk-Adjusted Returns**: Sharpe ratio and Sortino ratio
-- **Trade Frequency**: Number of trades per strategy
-- **Maximum Adverse Excursion**: Worst drawdown per strategy
-
-### **3. Risk Management**
-
-- **Portfolio Exposure**: Current risk exposure percentage
-- **Position Limits**: Maximum positions per instrument
-- **Stop Loss Monitoring**: Real-time SL tracking
-- **Correlation Matrix**: Asset correlation analysis
-
-### **4. Trade Journal**
-
-- **Trade Logging**: Detailed trade entry form
-- **Setup Validation**: Trade condition checklist
-- **Performance Tags**: Strategy and emotion tagging
-- **Notes Integration**: Trade reflection and learning
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Slate 50 | `#f8fafc` | Backgrounds, cards |
+| Slate 100 | `#f1f5f9` | Content backgrounds |
+| Slate 200 | `#e2e8f0` | Borders, dividers |
+| Slate 300 | `#cad5e2` | Disabled states |
+| Slate 400 | `#90a1b9` | Secondary text |
+| Slate 500 | `#62748e` | Labels, descriptions |
+| Slate 600 | `#45556c` | Primary buttons |
+| Slate 700 | `#314158` | Headers, text |
+| Slate 800 | `#1d293d` | Navigation, headers |
+| Slate 900 | `#0f172b` | Main background |
 
 ## 📱 Responsive Design
 
-The Ubuntu FX Dashboard is fully responsive and works seamlessly across all devices:
+The dashboard is optimized for:
 
-- **Desktop**: Full-featured dashboard experience
-- **Tablet**: Optimized touch interface
-- **Mobile**: Streamlined performance monitoring
+- Desktop screens (1200px+)
+- Tablet devices (768px+)
+- Mobile devices (responsive layout)
 
-## 🔧 Technical Architecture
+## 🔧 Development
 
-### **Frontend Stack**
+### Available Scripts
 
-- **React 18**: Modern component-based architecture
-- **TypeScript**: Type-safe development
-- **Material-UI**: Professional UI components
-- **Chart.js**: Interactive data visualization
-- **Redux Toolkit**: State management
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint issues
 
-### **Backend Integration**
+### Adding New Pages
 
-- **Local Storage**: Client-side data persistence
-- **WebSocket**: Real-time market data (optional)
-- **REST API**: External trading platform integration
-
-### **Data Structure**
-
-```typescript
-interface Trade {
-  id: string
-  date: Date
-  symbol: string
-  direction: 'long' | 'short'
-  entryPrice: number
-  exitPrice: number
-  stopLoss: number
-  takeProfit: number
-  positionSize: number
-  riskAmount: number
-  result: number
-  rrRatio: number
-  strategy: string
-  timeframe: string
-  notes: string
-  emotion: string
-}
-```
-
-## 🎯 Trading Philosophy
-
-### **Ubuntu FX Principles**
-
-1. **Discipline**: Strict adherence to trading rules
-2. **Risk Management**: Preservation of capital above all else
-3. **Continuous Improvement**: Learning from every trade
-4. **Emotional Control**: Maintaining psychological balance
-5. **Data-Driven Decisions**: Letting numbers guide strategy
-
-### **Risk Management Framework**
-
-- Maximum 1-2% risk per trade
-- Portfolio diversification limits
-- Correlation-based position sizing
-- Dynamic stop loss placement
-
-## 📈 Performance Metrics
-
-### **Key Performance Indicators**
-
-- **Sharpe Ratio**: Risk-adjusted return measurement
-- **Sortino Ratio**: Downside risk-adjusted return
-- **Calmar Ratio**: Return-to-max-drawdown ratio
-- **Win/Loss Ratio**: Average win divided by average loss
-- **Profit Factor**: Gross profits divided by gross losses
-
-### **Risk Metrics**
-
-- **Value at Risk (VaR)**: Maximum expected loss
-- **Maximum Drawdown**: Largest peak-to-trough decline
-- **Ulcer Index**: Measure of downside risk
-- **Risk of Ruin**: Probability of losing trading capital
-
-## 🛡️ Security & Privacy
-
-### **Data Protection**
-
-- All data stored locally in browser
-- No external data transmission
-- Encrypted local storage
-- GDPR compliant
-
-### **Access Control**
-
-- Single-user authentication
-- Session management
-- Activity logging
-
-## 🎨 Customization
-
-### **Dashboard Themes**
-
-- Dark mode (default)
-- Light mode
-- Custom color schemes
-
-### **Widget Configuration**
-
-- Drag-and-drop layout customization
-- Widget resizing and positioning
-- Personalized metric selection
-- Real-time configuration updates
+1. Create a new component in `src/pages/`
+2. Add the route in `App.tsx`
+3. Add navigation item in the menu configuration
 
 ## 🤝 Contributing
 
-We welcome contributions from the trading community:
-
 1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
-
-### **Development Guidelines**
-
-- Follow TypeScript best practices
-- Maintain consistent code formatting
-- Write comprehensive tests
-- Document new features
-
-## 🐛 Troubleshooting
-
-### **Common Issues**
-
-- **Data Not Loading**: Clear browser cache and refresh
-- **Performance Slow**: Reduce number of active widgets
-- **Chart Rendering Issues**: Update browser to latest version
-
-### **Support**
-
-For issues not covered in this documentation, please:
-
-1. Check the GitHub Issues page
-2. Create a new issue with detailed description
-3. Include screenshots if applicable
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- TradingView for charting inspiration
-- Material-UI team for excellent components
-- React community for continuous innovation
-- All traders who contributed feedback
+- [Ant Design](https://ant.design/) for UI components
+- [Recharts](https://recharts.org/) for data visualization
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [Vite](https://vitejs.dev/) for build tooling
+
+## 📞 Support
+
+For support, please open an issue on GitHub or contact the development team.
 
 ---
 
-### **🎯 Ubuntu FX - Professional Trading, Simplified**
-
-*"Ubuntu" - I am because we are. In trading, your success is our success.*
-
----
-*Version 1.0.0 | Last Updated: 2025*
+**Happy Trading!** 📈

@@ -87,7 +87,7 @@ const App: FC = () => {
     {
       key: '/instructions',
       icon: <FileTextOutlined />,
-      label: 'Trading Instructions',
+      label: 'Guidelines',
     },
     {
       key: '/trade-list',
