@@ -1,0 +1,142 @@
+.site-layout .site-layout-background {
+  background: #f1f5f9;
+}
+
+.logo {
+  text-align: center;
+  margin: 16px 0;
+  border-bottom: 1px solid #1d293d;
+  padding-bottom: 16px;
+}
+
+.ant-layout-sider {
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+}
+
+.ant-menu-item-group-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #90a1b9 !important;
+}
+
+.ant-layout-header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.ant-layout-footer {
+  background: #0f172b;
+  border-top: 1px solid #1d293d;
+}
+
+/* Custom slate theme overrides */
+.ant-menu-dark {
+  background: #0f172b !important;
+}
+
+.ant-menu-dark .ant-menu-item-selected {
+  background: #314158 !important;
+}
+
+.ant-menu-dark .ant-menu-item:hover {
+  background: #1d293d !important;
+}
+
+.ant-menu-dark .ant-menu-sub {
+  background: #0f172b !important;
+}
+
+/* Card styling with slate theme */
+.ant-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ant-card-bordered {
+  border: 1px solid #e2e8f0;
+}
+
+/* Button styling */
+.ant-btn-primary {
+  background: #45556c;
+  border-color: #45556c;
+}
+
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+  background: #62748e !important;
+  border-color: #62748e !important;
+}
+
+/* Table styling */
+.ant-table-thead > tr > th {
+  background: #f1f5f9;
+  color: #314158;
+  font-weight: 600;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: #f8fafc;
+}
+
+/* Form styling */
+.ant-input, .ant-select-selector, .ant-picker {
+  background: #ffffff;
+  border: 1px solid #cad5e2;
+  border-radius: 4px;
+}
+
+.ant-input:focus, .ant-select-selector:focus, .ant-picker-focused {
+  border-color: #62748e;
+  box-shadow: 0 0 0 2px rgba(98, 116, 142, 0.2);
+}
+
+/* Statistic styling */
+.ant-statistic-title {
+  color: #62748e;
+}
+
+.ant-statistic-content {
+  color: #314158;
+}
+
+/* Progress bar styling */
+.ant-progress-bg {
+  background: #45556c;
+}
+
+/* Tags styling */
+.ant-tag {
+  border-radius: 4px;
+}
+
+.ant-tag-green {
+  background: #e6f4ea;
+  color: #389e0d;
+  border-color: #b7eb8f;
+}
+
+.ant-tag-red {
+  background: #fff2f0;
+  color: #cf1322;
+  border-color: #ffa39e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ant-layout-sider {
+    position: absolute;
+    z-index: 100;
+  }
+  
+  .site-layout {
+    margin-left: 0 !important;
+  }
+}
