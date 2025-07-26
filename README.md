@@ -67,3 +67,5 @@ export default tseslint.config([
   },
 ])
 ```
+
+npm install -D @types/react-dom @types/react-router-dom
