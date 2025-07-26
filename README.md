@@ -240,4 +240,3 @@ For support, please open an issue on GitHub or contact the development team.
 ![preview image 28](public/pages/28.png)
 ![preview image 29](public/pages/29.png)
 ![preview image 30](public/pages/30.png)
-g
