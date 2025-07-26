@@ -10,20 +10,43 @@ import {
     Row,
     Col,
     Space,
-    message
+    message,
+    Tag
 } from 'antd';
 import {
     DollarCircleOutlined,
     CheckOutlined
 } from '@ant-design/icons';
+import moment from 'moment';
 
 const { Option } = Select;
 
+interface TradeFormValues {
+    date: moment.Moment;
+    pair: string;
+    direction: 'buy' | 'sell';
+    risk: number;
+    profit: number;
+    result: 'win' | 'loss' | 'breakeven';
+    strategy: string[];
+    notes?: string;
+}
+const strategyOptions: string[] = [
+    'Breakout',
+    'Trend Following',
+    'Mean Reversion',
+    'Scalping',
+    'Swing Trading',
+    'Position Trading',
+    'Algorithmic',
+    'News Trading'
+];
+
 const TradingForm: React.FC = () => {
-    const [form] = Form.useForm();
+    const [form] = Form.useForm<TradeFormValues>();
     const [loading, setLoading] = useState(false);
 
-    const onFinish = (values: unknown) => {
+    const onFinish = (values: TradeFormValues) => {
         setLoading(true);
         console.log('Received values:', values);
 
@@ -35,20 +58,29 @@ const TradingForm: React.FC = () => {
         }, 1500);
     };
 
+    const percentageParser = (value: string | undefined): number => {
+        if (!value) return 0.1;
+        const parsed = parseFloat(value.replace('%', ''));
+        return Math.min(Math.max(parsed, 0.1), 5);
+    };
+
     return (
-        <Card title="Trade Journal Entry" style={{
-            maxWidth: 800,
-            margin: '0 auto',
-            background: '#ffffff',
-            borderRadius: '8px',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
-        }}>
+        <Card
+            title="Trade Journal Entry"
+            style={{
+                maxWidth: 800,
+                margin: '0 auto',
+                background: '#ffffff',
+                borderRadius: '8px',
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+            }}
+        >
             <Form
                 form={form}
                 layout="vertical"
                 onFinish={onFinish}
                 initialValues={{
-                    date: new Date(),
+                    date: moment(),
                     pair: 'EUR/USD',
                     direction: 'buy',
                     risk: 1,
@@ -108,7 +140,7 @@ const TradingForm: React.FC = () => {
                                 max={5}
                                 step={0.1}
                                 formatter={value => `${value}%`}
-                                // parser={value => value!.replace('%', '') as unknown as number}
+                                parser={percentageParser}
                                 style={{ width: '100%' }}
                             />
                         </Form.Item>
@@ -147,9 +179,24 @@ const TradingForm: React.FC = () => {
                 <Form.Item
                     name="strategy"
                     label={<span style={{ color: '#314158' }}>Strategy Used</span>}
-                    rules={[{ required: true, message: 'Please enter strategy' }]}
+                    rules={[{ required: true, message: 'Please select at least one strategy' }]}
                 >
-                    <Input placeholder="e.g., Breakout, Trend Following, etc." />
+                    <Select
+                        mode="multiple"
+                        placeholder="Select strategies"
+                        tagRender={({ label, onClose }) => (
+                            <Tag closable onClose={onClose} style={{ marginRight: 3 }}>
+                                {label}
+                            </Tag>
+                        )}
+                        style={{ width: '100%' }}
+                    >
+                        {strategyOptions.map(strategy => (
+                            <Option key={strategy} value={strategy}>
+                                {strategy}
+                            </Option>
+                        ))}
+                    </Select>
                 </Form.Item>
 
                 <Form.Item
@@ -161,10 +208,18 @@ const TradingForm: React.FC = () => {
 
                 <Form.Item>
                     <Space>
-                        <Button type="primary" htmlType="submit" loading={loading} icon={<CheckOutlined />}>
+                        <Button
+                            type="primary"
+                            htmlType="submit"
+                            loading={loading}
+                            icon={<CheckOutlined />}
+                        >
                             Save Trade
                         </Button>
-                        <Button htmlType="button" onClick={() => form.resetFields()}>
+                        <Button
+                            htmlType="button"
+                            onClick={() => form.resetFields()}
+                        >
                             Reset
                         </Button>
                     </Space>
