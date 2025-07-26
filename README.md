@@ -1,12 +1,14 @@
 # Ubuntu FX Trading Journal Dashboard
 
+![logo](assets/logo_dark.png)
+
 A comprehensive Forex trading journal and analytics dashboard built with React, TypeScript, and Ant Design.
 
-## 📊 Overview
+## Overview
 
 Ubuntu FX is a professional trading journal application designed for Forex traders to track, analyze, and optimize their trading performance. The dashboard provides powerful tools for recording trades, analyzing performance metrics, and improving trading strategies.
 
-## 🚀 Features
+## Features
 
 ### Core Functionality
 
@@ -238,4 +240,3 @@ For support, please open an issue on GitHub or contact the development team.
 ![preview image 28](public/pages/28.pn)
 ![preview image 29](public/pages/29.pn)
 ![preview image 30](public/pages/30.pn)
-![preview image 31](public/pages/31.pn)
