@@ -1,4 +1,3 @@
-// pages/HelpSupport.tsx
 import React from 'react';
 import { Card, Typography, Collapse, List, Button } from 'antd';
 import {
