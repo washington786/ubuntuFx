@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import { useState, type FC } from 'react';
+
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
+
 import { Layout, Menu, Button, Avatar, Dropdown, Space, Typography } from 'antd';
+
 import {
   DashboardOutlined,
   FormOutlined,
@@ -9,28 +12,21 @@ import {
   BarChartOutlined,
   UserOutlined,
   LogoutOutlined,
-  QuestionCircleOutlined
+  QuestionCircleOutlined,
+  BookOutlined
 } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import './App.css';
 import type { MenuProps } from 'antd';
 
 //page components
-import Dashboard from './pages/Dashboard';
-import TradingForm from './pages/TradingForm';
-import TradingInstructions from './pages/TradingInstructions';
-import TradeList from './pages/TradeList';
-import SmartAnalyzer from './pages/SmartAnalyzer';
-import Login from './pages/auth/Login';
-import Register from './pages/auth/Register';
-import PasswordRecovery from './pages/auth/PasswordRecovery';
-import HelpSupport from './pages/HelpSupport';
-import FAQs from './pages/FAQs';
+import { Login, Register, PasswordRecovery, Dashboard, FAQs, HelpSupport, Materials, SmartAnalyzer, TradeList, TradingForm, TradingInstructions } from './pages';
+
 
 const { Header, Sider, Content } = Layout;
 const { Title, Text } = Typography;
 
-const App: React.FC = () => {
+const App: FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -91,6 +87,11 @@ const App: React.FC = () => {
       key: '/smart-analyzer',
       icon: <BarChartOutlined />,
       label: 'Smart Analyzer',
+    },
+    {
+      key: '/materials',
+      icon: <BookOutlined />,
+      label: 'Study Materials',
     },
     {
       key: 'support-group',
@@ -229,6 +230,7 @@ const App: React.FC = () => {
               <Route path="/instructions" element={<TradingInstructions />} />
               <Route path="/trade-list" element={<TradeList />} />
               <Route path="/smart-analyzer" element={<SmartAnalyzer />} />
+              <Route path="/materials" element={<Materials />} />
               <Route path="/help" element={<HelpSupport />} />
               <Route path="/faqs" element={<FAQs />} />
               <Route path="*" element={<Navigate to="/dashboard" replace />} />

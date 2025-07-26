@@ -97,10 +97,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                         <Form.Item name="remember" valuePropName="checked" noStyle>
                             <Checkbox style={{ color: '#62748e' }}>Remember me</Checkbox>
                         </Form.Item>
-
-                        <a style={{ float: 'right', color: '#45556c' }} href="#/recover-password">
-                            Forgot password?
-                        </a>
+                        <Link style={{ float: 'right', color: '#45556c' }} to={'/recover-password'}>Forgot password?</Link>
                     </Form.Item>
 
                     <Form.Item>
