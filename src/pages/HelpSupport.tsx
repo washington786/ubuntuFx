@@ -85,7 +85,7 @@ const HelpSupport: React.FC = () => {
                         {
                             icon: <PhoneOutlined style={{ color: '#1890ff' }} />,
                             title: 'Phone Support',
-                            description: '+1 (555) 123-4567'
+                            description: '+27 812 767 830'
                         },
                         {
                             icon: <MessageOutlined style={{ color: '#1890ff' }} />,
