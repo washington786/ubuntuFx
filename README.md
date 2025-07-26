@@ -93,11 +93,16 @@ ubuntu-fx-dashboard/
 │   │   └── constants.ts
 │   ├── App.tsx
 │   └── main.tsx
-├── .gitignore
-├── index.html
+├── Dockerfile
+├── Dockerfile.dev
+├── docker-compose.yml
+├── docker-compose.prod.yml
+├── nginx.conf
+├── .dockerignore
+├── .env
+├── .env.production
 ├── package.json
 ├── tsconfig.json
-├── tsconfig.node.json
 ├── vite.config.ts
 └── README.md
 ```
