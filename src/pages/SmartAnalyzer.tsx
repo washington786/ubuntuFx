@@ -226,7 +226,7 @@ const SmartAnalyzer: React.FC = () => {
                                         nameKey="factor"
                                         label={({ name, percent }) => `${name}: ${(percent! * 100).toFixed(0)}%`}
                                     >
-                                        {analysisResult.details.map((entry: any, index: number) => (
+                                        {analysisResult.details.map((_entry: any, index: number) => (
                                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                         ))}
                                     </Pie>
