@@ -30,7 +30,7 @@ const { Title, Text } = Typography;
 
 const App: FC = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
